@@ -26,7 +26,7 @@ Resources are by default downloaded and updated in the `C:\Stella-Mod-Resources`
 
 
 ## 👥 Collaboration
-If you'd like to contribute your preset to the application's public resources, please create a new [Pull request](https://github.com/sefinek24/Stella-Mod-Resources/pulls).
+If you'd like to contribute your preset to the application's public resources, please create a new [Pull request](https://github.com/sefinek/Stella-Mod-Resources/pulls).
 Your contributions are greatly appreciated.
 
 ### 🍽️ How to create a new Pull request
@@ -62,7 +62,7 @@ Your contributions are greatly appreciated.
      > ⚠️ **WARNING**  
      > PLEASE MAKE SURE YOU'RE CREATING THE PRESET IN THE CORRECT PATH!
      > ADDITIONALLY, FILES MUST FOLLOW THE APPROPRIATE NAMING CONVENTIONS!
-     > IT IS ESSENTIAL TO FAMILIARIZE YOURSELF WITH THE RULES AVAILABLE [HERE](https://github.com/sefinek24/Stella-Mod-Resources/tree/main/public/resources/ReShade/Presets/1.%20Made%20by%20community).  
+     > IT IS ESSENTIAL TO FAMILIARIZE YOURSELF WITH THE RULES AVAILABLE [HERE](https://github.com/sefinek/Stella-Mod-Resources/tree/main/public/resources/ReShade/Presets/1.%20Made%20by%20community).  
      > FAILURE TO COMPLY WILL RESULT IN YOUR PULL REQUEST BEING REJECTED!
 
 5. **Commit Your Changes**
