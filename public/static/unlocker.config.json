@@ -15,7 +15,6 @@
   "CustomResY": 1080,
   "MonitorNum": 1,
   "Priority": 3,
-  "DllList": [],
-  "ConfigDate": "18.01.2024",
-  "ConfigVersion": "1.2.1"
+  "ConfigDate": "27.12.2024",
+  "ConfigVersion": "1.2.2"
 }
