@@ -18,7 +18,7 @@ Repository containing a collection of presets and shaders used by the [Genshin S
 
 ### 💫 What is Genshin Stella Mod?
 It is a software that allows you to inject ReShade, 3DMigoto, and simultaneously unlock the frame rate (useful if you have a monitor with a refresh rate higher than 60 Hz) in the game [Genshin Impact](https://genshin.hoyoverse.com).
-The Chinese version of the game – [YuanShen](https://www.yuanshen.com) – is also supported.
+The Chinese version of the game ([YuanShen](https://www.yuanshen.com)) – is also supported.
 You can find more information in the [official documentation](https://sefinek.net/genshin-stella-mod/docs?page=introduction).
 
 ### 📂 I'm using Genshin Stella Mod. Where are the resources located on my computer?
@@ -42,7 +42,5 @@ This repository uses shaders from [crosire/reshade-shaders](https://github.com/c
 
 
 ## 📑 License
-This project is shared under the [MIT License](LICENSE).  
-For detailed terms and conditions, please refer to the [LICENSE](LICENSE) file.
-
+This project is shared under the [MIT License](LICENSE). For detailed terms and conditions, please refer to the [LICENSE](LICENSE) file.
 As for the shaders, each one comes with its own license chosen by its original author.
