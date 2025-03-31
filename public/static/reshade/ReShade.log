@@ -2,18 +2,13 @@ If you are reading this after launching the game at least once, it likely means 
 
 In that event here are some steps you can try to resolve this:
 
-1) Make sure this file and the related DLL are really in the same directory as the game executable.
-   If that is the case and it does not work regardless, check if there is a 'bin' directory, move them there and try again.
+1) Make sure that this file and the related DLL are located in the same directory as the game's executable.
 
-2) Try running the game with elevated user permissions by doing a right click on its executable and choosing 'Run as administrator'.
+2) If the game crashes, try disabling all overlays (e.g., Origin), recording software (e.g., Fraps), FPS display tools,  
+   GPU overclocking and tweaking utilities, and other third-party DLLs (e.g., ENB, Helix, Umod).
 
-3) If the game crashes, try disabling all game overlays (like Origin), recording software (like Fraps), FPS displaying software,
-   GPU overclocking and tweaking software and other proxy DLLs (like ENB, Helix or Umod).
-
-4) If none of the above helps, you can get support on the forums at https://reshade.me/forum. But search for your problem before
-   creating a new topic, as somebody else may have already found a solution.
+3) If none of the above helps, you can get support on our Discord server: https://discord.gg/dx8yJtM8xX
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-* Genshin Stella Mod
-This release was downloaded from: https://stella.sefinek.net
+Genshin Stella Mod (https://stella.sefinek.net)
