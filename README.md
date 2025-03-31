@@ -1,5 +1,5 @@
 # 📦 Stella Mod Resources
-Repository containing a collection of presets and shaders used by the [Genshin Stella Mod](https://sefinek.net/genshin-stella-mod/repositories).
+Repository containing a collection of presets and shaders used by the [Genshin Stella Mod](https://sefinek.net/genshin-stella-mod).
 
 
 ## 🔎 File locations
