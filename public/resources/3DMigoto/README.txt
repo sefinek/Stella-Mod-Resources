@@ -1,10 +1,14 @@
-✨ Only subscribers of Stella Mod Plus can use 3DMigoto within Stella Mod
-By becoming a subscriber, you do NOT receive the 3DMigoto software itself.
-Instead, you gain the ability to run 3DMigoto together with ReShade and FPS Unlocker in the Stella Mod.
+✨ Only Stella Mod Plus subscribers can use 3DMigoto within Stella Mod
+By subscribing, you do NOT receive the 3DMigoto software itself.
+Instead, you gain the ability to run 3DMigoto, ReShade, and the FPS Unlocker simultaneously - with no manual setup required.
+Please also note that we do not use GIMI.
 
-💥 IMPORTANT
-Please note that the benefits of being a subscriber are granted solely as a gesture of appreciation.
-These benefits are not a digital product that can be purchased.
+💥 Important
+The benefits of subscribing are purely a gesture of appreciation for your support. They are not digital products that can be purchased.
 
+📄 License
+For more information about the license, visit: https://sefinek.net/genshin-stella-mod/docs?page=license_3dmigoto
+
+🌍 Links
 * Stella Mod Plus: https://sefinek.net/genshin-stella-mod/subscription
-* Our Discord: https://discord.gg/k2wfGRq4dT
+* Discord server: https://discord.gg/k2wfGRq4dT
