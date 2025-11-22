@@ -32,12 +32,6 @@
 	--Preprocessor flags:
 	  --UIMASK_MULTICHANNEL:
 		Enables having up to three different masks on each color channel.
-	  --UIMASK_TOGGLEKEY_RED:
-		Keycode that toggles the red channel of the mask.
-	  --UIMASK_TOGGLEKEY_BLUE:
-		Keycode that toggles the blue channel of the mask.
-	  --UIMASK_TOGGLEKEY_GREEN:
-		Keycode that toggles the green channel of the mask.
 
 	--Refer to this page for keycodes:
 	  https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx
@@ -70,7 +64,10 @@
 		This avoids possible artifacts and makes the mask blend more easily on the eyes.
 		You may not need this if your mask is accurate enough and/or the HUD is simple enough.
 
-	  8-Now save the final image as "UIMask.png" in your textures folder and you're done!
+	  8-Now save the final image with a unique name such as "MyUIMask.png" in your textures folder.
+
+	  9-Set the preprocessor definition UIMASK_TEXTURE to the unique name of your image, with quotes.
+	    You're done!
 
 
 	MIT Licensed:
@@ -105,22 +102,14 @@
 	#define UIMASK_MULTICHANNEL 0
 #endif
 
-#ifndef UIMASK_TOGGLEKEY_RED
-	#define UIMASK_TOGGLEKEY_RED 0x67 //Numpad 7
-#endif
-
-#ifndef UIMASK_TOGGLEKEY_GREEN
-	#define UIMASK_TOGGLEKEY_GREEN 0x68 //Numpad 8
-#endif
-
-#ifndef UIMASK_TOGGLEKEY_BLUE
-	#define UIMASK_TOGGLEKEY_BLUE 0x69 //Numpad 9
-#endif
-
 #if !UIMASK_MULTICHANNEL
 	#define TEXFORMAT R8
 #else
 	#define TEXFORMAT RGBA8
+#endif
+
+#ifndef UIMASK_TEXTURE
+	#define UIMASK_TEXTURE "UIMask.png"
 #endif
 
 //#endregion
@@ -141,17 +130,6 @@ uniform int _Help
 		"  UIMASK_MULTICHANNEL:\n"
 		"    If set to 1, each of the RGB color channels in the texture is "
 		"treated as a separate mask.\n"
-		"  UIMASK_TOGGLEKEY_RED:\n"
-		"    Defines the key for using the mask in the red channel, the "
-		"default is Numpad 7.\n"
-		"  UIMASK_TOGGLEKEY_GREEN:\n"
-		"    Defines the key for using the mask in the green channel, the "
-		"default is Numpad 8.\n"
-		"  UIMASK_TOGGLEKEY_BLUE:\n"
-		"    Defines the key for using the mask in the blue channel, the "
-		"default is Numpad 9.\n"
-		"\n"
-		"Google \"virtual key codes\" for the values of each keyboard key.\n"
 		"\n"
 		"How to create a mask:\n"
 		"\n"
@@ -164,8 +142,10 @@ uniform int _Help
 		"5. Cover the UI with white to mask it from effects. The stronger the "
 		"mask white color, the more opaque the mask will be.\n"
 		"6. Set the mask layer opacity back to 100%.\n"
-		"7. Save the image in one of your texture folders, named "
-		"\"UIMask.png\".\n"
+		"7. Save the image in one of your texture folders, making sure to "
+		"use a unique name such as: \"MyUIMask.png\"\n"
+		"8. Set the preprocessor definition UIMASK_TEXTURE to the name of "
+		"your image, with quotes: \"MyUIMask.png\"\n"
 		;
 	ui_category = "Help";
 	ui_category_closed = true;
@@ -195,26 +175,26 @@ uniform bool bDisplayMask <
 
 #if UIMASK_MULTICHANNEL
 
-uniform bool ToggleRed
-<
-	source = "key";
-	keycode = UIMASK_TOGGLEKEY_RED;
-	toggle = true;
->;
+uniform bool bToggleRed <
+	ui_label = "Toggle Red Channel";
+	ui_tooltip = "Toggle UI masking for the red channel.\n"
+		     "Right click to assign a hotkey.\n"
+		     "\nDefault: On";
+> = true;
 
-uniform bool ToggleGreen
-<
-	source = "key";
-	keycode = UIMASK_TOGGLEKEY_GREEN;
-	toggle = true;
->;
+uniform bool bToggleGreen <
+	ui_label = "Toggle Green Channel";
+	ui_tooltip = "Toggle UI masking for the green channel.\n"
+		     "Right click to assign a hotkey."
+		     "\nDefault: On";
+> = true;
 
-uniform bool ToggleBlue
-<
-	source = "key";
-	keycode = UIMASK_TOGGLEKEY_BLUE;
-	toggle = true;
->;
+uniform bool bToggleBlue <
+	ui_label = "Toggle Blue Channel";
+	ui_tooltip = "Toggle UI masking for the blue channel.\n"
+		     "Right click to assign a hotkey."
+		     "\nDefault: On";
+> = true;
 
 #endif
 
@@ -232,7 +212,7 @@ sampler Backup
 	Texture = BackupTex;
 };
 
-texture MaskTex <source="UIMask.png";>
+texture MaskTex <source=UIMASK_TEXTURE;>
 {
 	Width = BUFFER_WIDTH;
 	Height = BUFFER_HEIGHT;
@@ -261,11 +241,10 @@ float4 MainPS(float4 pos : SV_Position, float2 uv : TEXCOORD) : SV_Target {
 		float3 mask_rgb = tex2D(Mask, uv).rgb;
 
 		// This just works, it basically adds masking with each channel that has
-		// been toggled. 'ToggleRed' is inverted so it defaults to 'true' upon
-		// start.
+		// been toggled.
 		float mask = saturate(
 			1.0 - dot(1.0 - mask_rgb,
-				float3(!ToggleRed, ToggleGreen, ToggleBlue)));
+				float3(bToggleRed, bToggleGreen, bToggleBlue)));
 	#endif
 
 	color = lerp(color, backup, mask * fMask_Intensity);
