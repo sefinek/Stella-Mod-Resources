@@ -10,12 +10,11 @@
   "UsePowerSave": false,
   "SuspendLoad": false,
   "UseMobileUI": false,
-  "FPSTarget": 144,
+  "UseHDR": false,
+  "FPSTarget": null,
   "CustomResX": 1920,
   "CustomResY": 1080,
   "MonitorNum": 1,
   "Priority": 3,
-  "AdditionalCommandLine": "",
-  "ConfigDate": "27.12.2024",
-  "ConfigVersion": "1.3.0"
+  "AdditionalCommandLine": ""
 }
