@@ -11,7 +11,7 @@
   "SuspendLoad": false,
   "UseMobileUI": false,
   "UseHDR": false,
-  "FPSTarget": null,
+  "FPSTarget": 60,
   "CustomResX": 1920,
   "CustomResY": 1080,
   "MonitorNum": 1,
